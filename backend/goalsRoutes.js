@@ -6,15 +6,15 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  res.status(200).send({ message: "Get Goals" });
+  res.status(200).send({ message: "Set Goals" });
 });
 
-router.put("/", (req, res) => {
-  res.status(200).send({ message: "Get Goals" });
+router.put("/:id", (req, res) => {
+  res.status(200).send({ message: `Update Goals ${req.params.id}` });
 });
 
-router.delete("/", (req, res) => {
-  res.status(200).send({ message: "Get Goals" });
+router.delete("/:id", (req, res) => {
+  res.status(200).send({ message: `Delete Goals ${req.params.id}` });
 });
 
 module.exports = router;
