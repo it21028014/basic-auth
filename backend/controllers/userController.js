@@ -63,7 +63,13 @@ const loginUser = asynchandler(async (req, res) => {
 });
 
 const getMe = asynchandler(async (req, res) => {
-  res.json({ message: "Get user" });
+  const { _id, name, email } = await User.findById(req.user.id);
+
+  res.status(200).json({
+    id: _id,
+    name,
+    email,
+  });
 });
 
 const genrateToekn = (id) => {
